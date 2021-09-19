@@ -1,3 +1,8 @@
 {
-    "workbench.colorTheme": "Darcula Pycharm with Dark GUI" // garytyler.darcula-pycharm
+    "workbench.colorTheme": "Darcula Pycharm with Dark GUI",
+    "python.formatting.provider": "black", // garytyler.darcula-pycharm
+    "python.linting.pylintArgs": [ // https://stackoverflow.com/a/62061367
+        "--generated-members",
+        "torch.*"
+    ]
 }
