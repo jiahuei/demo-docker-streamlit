@@ -23,14 +23,14 @@
     If you list more than one `CMD` then only the last `CMD` will take effect.
     * `CMD` tells the container which command it should run when it is started
 
-
+---
 ## Restart Docker
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
-
+---
 ## Docker run flags:
 
 1. `-v, --volume=[host-src:]container-dest[:<options>]`
@@ -44,20 +44,7 @@ sudo systemctl restart docker
     * Sets the username or UID used and optionally the groupname or GID for the specified command.
     * `-u $(id -u):$(id -g)`
 
-
-## Purging Unused or Dangling Images, Containers, Volumes, and Networks
-
-[(link)](https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes)
-
-**Clean up any resources — images, containers, volumes, and networks — that are dangling**
-
-`docker system prune`
-
-**Additionally remove any stopped containers and all unused images**
-
-`docker system prune -a`
-
-
+---
 ## Images
 
 **List dangling images**
@@ -91,7 +78,7 @@ docker tag old_tag new_tag
 docker image rm --no-prune jiahuei/tensorflow:1.9.0-gpu
 ```
 
-
+---
 ## Containers
 
 **List containers**
@@ -115,5 +102,52 @@ docker image rm --no-prune jiahuei/tensorflow:1.9.0-gpu
 
 `docker container prune`
 
+---
+## Purging Unused or Dangling Images, Containers, Volumes, and Networks
 
+[(link)](https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes)
+
+**Remove any resources — images, containers, volumes, networks, build caches — that are dangling**
+
+`docker system prune`
+
+**Additionally remove any stopped containers and all unused images**
+
+`docker system prune -a`
+
+**Remove build cache**
+
+`docker builder prune`
+
+**Remove all unused build cache, not just dangling ones**
+
+`docker builder prune -a`
+
+---
+## Reduce the size of virtual disk (for Windows WSL 2)
+
+References:
+  * https://nickjanetakis.com/blog/reclaiming-tons-of-diskspace-by-compacting-your-docker-desktop-wsl-2-vm
+  * https://stackoverflow.com/a/68850149
+
+Run commands:
+  1. Shutdown Docker Desktop
+  2. Shutdown WSL:
+     ```
+     wsl --shutdown
+     ```
+  3. Compacting the VM file:
+     * Windows Home Edition
+       ```
+       diskpart
+       select vdisk file="C:\Users\<User>\AppData\local\Docker\wsl\data\ext4.vhdx"
+       attach vdisk readonly
+       compact vdisk
+       detach vdisk
+       exit
+       ```
+     * Other Windows editions
+       ```
+       optimize-vhd -Path "C:\Users\<User>\AppData\local\Docker\wsl\data\ext4.vhdx" -Mode full
+       ```
 
