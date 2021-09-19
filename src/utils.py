@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 import json
 import requests
 from functools import lru_cache
@@ -8,7 +9,7 @@ from io import BytesIO
 
 @lru_cache(1)
 def load_imagenet_labels_1k():
-    with open("resources/imagenet_labels_1k.json", "r") as f:
+    with open(os.path.join("resources", "imagenet_labels_1k.json"), "r") as f:
         return json.load(f)
 
 

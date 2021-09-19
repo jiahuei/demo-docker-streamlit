@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 import torch
 from torchvision import models, transforms as T
 from PIL import Image
@@ -18,7 +19,7 @@ transforms = T.Compose(
 
 
 # Input image
-fpath = "resources/n01819313_sulphur-crested_cockatoo.jpg"
+fpath = os.path.join("resources", "n01819313_sulphur-crested_cockatoo.jpg")
 img = Image.open(fpath)
 
 # Run the net
