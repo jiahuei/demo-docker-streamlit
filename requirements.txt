@@ -1,0 +1,12 @@
+matplotlib
+numpy
+opencv-python
+pandas
+Pillow
+pylint
+requests
+scipy
+streamlit
+tqdm
+torch~=1.9.0
+torchvision~=0.10.0
