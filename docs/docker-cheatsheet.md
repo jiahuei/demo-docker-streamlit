@@ -130,13 +130,13 @@ References:
   * https://nickjanetakis.com/blog/reclaiming-tons-of-diskspace-by-compacting-your-docker-desktop-wsl-2-vm
   * https://stackoverflow.com/a/68850149
 
-Run commands:
+Steps:
   1. Shutdown Docker Desktop
-  2. Shutdown WSL:
+  2. Shutdown WSL (command prompt / PowerShell):
      ```
      wsl --shutdown
      ```
-  3. Compacting the VM file:
+  3. Compacting the VM file (PowerShell as admin):
      * Windows Home Edition
        ```
        diskpart
