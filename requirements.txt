@@ -1,9 +1,11 @@
 black
+kaleido
 matplotlib
 numpy
 opencv-python
 pandas
 Pillow
+plotly
 pylint
 requests
 scipy
