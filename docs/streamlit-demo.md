@@ -1,13 +1,13 @@
-# MS-COCO Caption Explorer
+# Streamlit Demo
 
 A Streamlit UI tool for exploring MS-COCO captions.
 
 Just clone this repo and start exploring.
 
 
-## Explore generated captions
+## Explore generated captions on MS-COCO
 
-Run `streamlit run explore_gen_captions.py`
+Run `streamlit run src/streamlit_captions.py`
 
 Demo:
 1. Unzip `demo/data.zip`
@@ -18,7 +18,7 @@ Demo:
 
 ## Explore JSON file
 
-Run `streamlit run explore_json.py`
+Run `streamlit run src/streamlit_json.py`
 
 Demo:
 1. Unzip `demo/data.zip`
