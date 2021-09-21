@@ -2,5 +2,6 @@
 
 Repo to demo usage of Docker & Streamlit for Python & deep learning.
 
-Clone this repo to your computer.
+1. Clone this repo to your computer.
+2. Unzip `resources/data.zip`
 
