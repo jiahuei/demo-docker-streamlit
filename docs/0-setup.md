@@ -74,3 +74,4 @@ ALternatively, *Anaconda* or *virtualenv* can be used.
 6. Completed setup:
     * ![Remote 7](../resources/vscode-screen/remote%20(7).png)
 
+
