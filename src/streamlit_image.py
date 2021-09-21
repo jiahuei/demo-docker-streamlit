@@ -27,7 +27,8 @@ def match(query, gallery):
 
     # store all the good matches as per Lowe's ratio test.
     good = [m for m, n in matches if m.distance < 0.7 * n.distance]
-    if len(good) > MIN_MATCH_COUNT:
+    match_success = len(good) > MIN_MATCH_COUNT
+    if match_success:
         src_pts = np.float32([kp1[m.queryIdx].pt for m in good]).reshape(-1, 1, 2)
         dst_pts = np.float32([kp2[m.trainIdx].pt for m in good]).reshape(-1, 1, 2)
         M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)
@@ -37,8 +38,7 @@ def match(query, gallery):
         gallery = cv2.polylines(gallery, [np.int32(dst)], True, 255, 3, cv2.LINE_AA)
     else:
         print("Not enough matches are found - {}/{}".format(len(good), MIN_MATCH_COUNT))
-        gallery = None
-    return gallery
+    return gallery, match_success
 
 
 def main():
@@ -62,7 +62,11 @@ def main():
 
     # Main panel
     with st.spinner("Computing ..."):
-        gallery_img = match(query_img, gallery_img)
+        gallery_img, match_success = match(query_img, gallery_img)
+    if match_success:
+        st.info("Match succeeded")
+    else:
+        st.info("Match failed")
 
     col1, col2 = st.columns([0.4, 0.6])
 
