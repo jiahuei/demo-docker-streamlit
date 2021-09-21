@@ -9,6 +9,8 @@ Pillow
 plotly
 requests
 scipy
+seaborn
+statsmodels
 streamlit
 tqdm
 torch~=1.9.0
