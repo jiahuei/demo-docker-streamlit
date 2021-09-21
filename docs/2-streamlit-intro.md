@@ -10,6 +10,7 @@ From Streamlit web site:
 * An open-source Python library for turning data scripts into shareable web apps.
 
 * Build an interactive frontend by writing Python scripts.
+  * ![streamlit-app](../resources/streamlit-app.jpg)
 
 * Allows us to add interactive widgets by just declaring a variable.
   * No need to write a backend, define routes, handle HTTP requests, connect a frontend, write HTML, CSS, JavaScript, etc
