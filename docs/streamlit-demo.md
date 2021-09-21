@@ -1,27 +1,31 @@
 # Streamlit Demo
 
-A Streamlit UI tool for exploring MS-COCO captions.
-
-Just clone this repo and start exploring.
-
-
-## Explore generated captions on MS-COCO
-
-Run `streamlit run src/streamlit_captions.py`
-
-Demo:
-1. Unzip `demo/data.zip`
-2. Run the script
-3. Screenshot:
-    ![explore_gen_captions](../resources/explore_gen_captions.png "explore_gen_captions.py")
+Streamlit demos.
 
 
 ## Explore JSON file
 
 Run `streamlit run src/streamlit_json.py`
 
-Demo:
-1. Unzip `demo/data.zip`
-2. Run the script
-3. Screenshot:
-    ![explore_json](../resources/explore_json.png "explore_json.py")
+Screenshot: ![streamlit_json](../resources/streamlit_json.png "streamlit_json.py")
+
+
+## Explore COVID-19 Vaccination Data
+
+Run `streamlit run src/streamlit_plotly.py`
+
+Screenshot: ![streamlit_plotly](../resources/streamlit_plotly.png "streamlit_plotly.py")
+
+
+## Demo OpenCV
+
+Run `streamlit run src/streamlit_image.py`
+
+Screenshot: ![streamlit_image](../resources/streamlit_image.png "streamlit_image.py")
+
+
+## Explore generated captions on MS-COCO
+
+Run `streamlit run src/streamlit_captions.py`
+
+Screenshot: ![streamlit_captions](../resources/streamlit_captions.png "streamlit_captions.py")
