@@ -2,7 +2,8 @@
 import os
 import json
 import urllib.request
-import streamlit as st
+import numpy as np
+import cv2
 from functools import lru_cache
 from PIL import Image
 from io import BytesIO
@@ -39,8 +40,6 @@ def load_image_from_url(url):
     return img
 
 
-@st.cache(show_spinner=True)
-def load_image_from_url_streamlit(url):
-    with urllib.request.urlopen(url) as response:
-        img = Image.open(BytesIO(response.read()))
-    return img
+def streamlit_uploaded_file_to_cv2(file):
+    file_bytes = np.asarray(bytearray(file.read()), dtype=np.uint8)
+    return cv2.imdecode(file_bytes, 1)

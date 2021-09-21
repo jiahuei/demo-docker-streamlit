@@ -8,7 +8,12 @@ import json
 import numpy as np
 import pandas as pd
 import streamlit as st
-from utils import METRICS, dict_filter, load_image_from_url_streamlit
+from utils import METRICS, dict_filter, load_image_from_url
+
+
+@st.cache(show_spinner=True)
+def load_image_from_url_streamlit(url):
+    return load_image_from_url(url)
 
 
 @st.cache(allow_output_mutation=True, max_entries=2)
@@ -75,7 +80,7 @@ def main():
     top1, top2, top3 = st.columns(3)
     with top1:
         seed = st.number_input(
-            f"PRNG seed",
+            "PRNG seed",
             min_value=0,
             max_value=None,
             value=0,
@@ -133,9 +138,7 @@ def main():
     model = merge_captions_scores(model_captions, model_scores)
 
     # Merge DF
-    merged = baseline.merge(
-        model, on="image_id", how="outer", suffixes=["_baseline", "_model"]
-    )
+    merged = baseline.merge(model, on="image_id", how="outer", suffixes=["_baseline", "_model"])
     merged = coco_val.merge(merged, on="image_id", how="outer").dropna(axis=0)
     merged = merged.rename(columns={"caption": "caption_coco"})
     assert len(baseline) == len(model)
