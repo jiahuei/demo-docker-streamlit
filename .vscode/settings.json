@@ -4,5 +4,8 @@
     "python.linting.pylintArgs": [ // https://stackoverflow.com/a/62061367
         "--generated-members",
         "torch.*"
+    ],
+    "cSpell.words": [
+        "Streamlit"
     ]
 }
