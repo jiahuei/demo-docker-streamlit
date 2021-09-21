@@ -2,7 +2,7 @@ r"""
 Created on 22/6/2021 4:18 PM
 @author: jiahuei
 
-streamlit run explore_json.py
+streamlit run streamlit_json.py
 """
 import json
 import streamlit as st

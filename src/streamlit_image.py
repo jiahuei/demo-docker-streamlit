@@ -1,8 +1,8 @@
 r"""
-Created on 22/6/2021 5:27 PM
+Created on 21/9/2021 5:27 PM
 @author: jiahuei
 
-streamlit run explore_gen_captions.py
+streamlit run streamlit_image.py
 """
 import numpy as np
 import cv2
