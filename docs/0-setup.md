@@ -55,6 +55,18 @@ ALternatively, *Anaconda* or *virtualenv* can be used.
             "extensions": ["ms-python.python"],
         }
         ```
+    * Another example `devcontainer.json` ([reference](https://www.reddit.com/r/datascience/comments/fw6ty0/what_are_your_favorite_vs_code_extension_for/fmmp3w2)):
+        ```
+        {
+            "name": "my-repo",
+            "dockerFile": "/path/to/repo/Dockerfile",
+            "context": "..",
+            "runArgs": [
+                "--volume",
+                "/Users/me/.cache/.vscode-server:/root/.vscode-server",
+            ]
+        }
+        ```
 
 3. Run VS Code command: `Remote-Containers: Open Folder in Container`
     * ![Remote 0](../resources/vscode-screen/remote%20(0).png)
