@@ -22,5 +22,5 @@ From Streamlit web site:
 
 * Data exploration
 * Data visualisation
-* Simple web frontend (perhaps for debugging purposes)
+* Simple web frontend (demo / debugging purposes)
 
