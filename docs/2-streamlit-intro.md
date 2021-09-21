@@ -24,3 +24,9 @@ From Streamlit web site:
 * Data visualisation
 * Simple web frontend (demo / debugging purposes)
 
+
+---
+## Cheat sheet
+
+https://share.streamlit.io/daniellewisdl/streamlit-cheat-sheet/app.py
+
