@@ -52,7 +52,7 @@ Compared to a standard virtual environment like Anaconda / virtualenv:
     - Slightly longer container startup time
 
   * Steep learning curve.
-    - Dockerfile
+    - Dockerfile, Docker Compose
     - Port forwarding
     - Container launch commands
 
