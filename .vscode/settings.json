@@ -1,11 +1,17 @@
 {
     "workbench.colorTheme": "Darcula Pycharm with Dark GUI", // garytyler.darcula-pycharm
-    "python.formatting.provider": "black",
-    "python.linting.pylintArgs": [ // https://stackoverflow.com/a/62061367
-        "--generated-members",
-        "torch.*"
-    ],
     "cSpell.words": [
         "Streamlit"
-    ]
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length=99"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=99",
+        "--ignore=E501",
+    ],
 }
