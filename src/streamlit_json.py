@@ -27,7 +27,7 @@ def main():
 
     data = load_json(uploaded_file)
     st.header(f"Filename: {uploaded_file.name}")
-    st.markdown(f"---")
+    st.markdown("---")
     top1, top2 = st.columns([5, 6])
     with top1:
         st.info(
@@ -40,17 +40,17 @@ def main():
     expression = st.text_input(
         label='Expression examples: data["x"], data[0]', value="data"
     )
-    st.markdown(f"---")
+    st.markdown("---")
     try:
         data = eval(expression, {"data": data, "__builtins__": {}})
     except Exception:
-        st.markdown(f"Invalid expression. The full JSON object is:")
+        st.markdown("Invalid expression. The full JSON object is:")
         st.json(data)
         raise
     else:
         st.markdown(f"Length: {len(data)}")
         st.markdown(f"Type: {type(data)}")
-        st.markdown(f"Data:")
+        st.markdown("Data:")
         if isinstance(data, (list, dict)):
             st.json(data)
         else:
